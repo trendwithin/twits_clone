@@ -1,0 +1,91 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+@import "foundation_and_overrides";
+
+body {
+  background-color: #F9F9F9;
+}
+
+@media #{$large-up} {
+  .top-bar{
+    background-color: #FFFFFF;
+    color: #393939;
+  }
+
+  #logo {
+    font-size: 24px;
+  }
+
+  #logo a {
+    color: black;
+  }
+  .nav-pad-color{
+    padding-top: 8px;
+    background-color: #40576F;
+  }
+  .top-bar-section ul li {
+    background-color: white;
+    margin: 1px 5px 1px 5px;
+  }
+
+  .top-bar-section ul.right li:first-child > a {
+  border-radius: 10px 10px 10px 10px;
+  }
+
+  .top-bar-section ul.right li:nth-child(2) > a {
+  border-radius: 10px 10px 10px 10px;
+  }
+}
+
+// Hero
+.hero {
+  background: url('stock_image.png') no-repeat center;
+  background-size: cover;
+  height: 40vh;
+}
+
+.intro {
+  padding: 3rem;
+  position: relative;
+  top: 50%;
+  transform: translateX(-40%);
+  transform: translateY(-50%);
+}
+
+// Colors
+.blue {
+  background-color: #10ADED;
+}
+
+.gray {
+  background-color: #EFEFEF;
+}
+
+// Text
+.center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+// Images
+img {
+  width: 100%;
+}
