@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/trendwithin/twits_clone.png?label=ready&title=Ready)](https://waffle.io/trendwithin/twits_clone)
 # TwitsClone
 ***Rails V 4.2.3***
 
