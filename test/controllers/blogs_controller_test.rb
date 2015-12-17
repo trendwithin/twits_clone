@@ -2,6 +2,11 @@ require "test_helper"
 
 class BlogsControllerTest < ActionController::TestCase
   include Devise::TestHelpers
+
+  def flash
+    pundit_flash = 'Something Went Wrong.  Contact Admin if you belive this an error'
+  end
+
   def blog
     @blog ||= blogs :one
   end
@@ -52,20 +57,35 @@ class BlogsControllerTest < ActionController::TestCase
   end
 
   def test_create_not_allowed_for_registered_users
-    skip('Rerturn to this when there is a policy redirect path established')
     sign_in users(:shane)
-    assert_raises(Pundit::NotAuthorizedError) { post :create, blog: { body: blog.body, title: blog.title } }
+    blog_count = Blog.all.count
+    post :create, blog: { body: blog.body, title: blog.title }
+    assert_redirected_to root_path || request.referrer
+    assert_equal blog_count, Blog.all.count
   end
 
   def test_create_not_allowed_for_site_visitors
-    skip('Rerturn to this when there is a policy redirect path established')
-    assert_raises(Pundit::NotAuthorizedError) { post :create, blog: { body: blog.body, title: blog.title } }
+    blog_count = Blog.all.count
+    post :create, blog: { body: blog.body, title: blog.title }
+    assert_redirected_to new_user_session_path
+    assert_equal blog_count, Blog.all.count
   end
 
   def test_show_allowed_for_admin_user
     sign_in users(:vic)
     get :show, id: blog
     assert_response :success
+  end
+
+  def test_show_allowed_for_registered_users
+    sign_in users(:shane)
+    get :show, id: blog
+    assert_response :success
+  end
+
+  def test_show_is_not_allowed_for_site_visitors
+    get :show, id: blog
+    assert_redirected_to root_path || request.referrer
   end
 
   def test_edit_allowed_for_admin_user
@@ -76,11 +96,13 @@ class BlogsControllerTest < ActionController::TestCase
 
   def test_edit_not_allowed_for_registered_users
     sign_in users(:shane)
-    assert_raises(Pundit::NotAuthorizedError) { get :edit, id: blog }
+    get :edit, id: blog
+    assert_redirected_to root_path || request.referrer
   end
 
   def test_edit_not_allowed_for_site_visitors
-    assert_raises(Pundit::NotAuthorizedError) { get :edit, id: blog }
+    get :edit, id: blog
+    assert_redirected_to root_path || request.referrer
   end
 
   def test_update_of_blog_post_allowed_for_admin
@@ -91,11 +113,13 @@ class BlogsControllerTest < ActionController::TestCase
 
   def test_update_of_blog_post_not_allowed_for_registered_users
     sign_in users(:shane)
-    assert_raises(Pundit::NotAuthorizedError) { put :update, id: blog, blog: { body: blog.body, title: blog.title } }
+    put :update, id: blog, blog: { body: blog.body, title: blog.title }
+    assert_redirected_to root_path || request.referrer
   end
 
   def test_update_of_blog_post_not_allowed_for_site_visitors
-    assert_raises(Pundit::NotAuthorizedError) { put :update, id: blog, blog: { body: blog.body, title: blog.title } }
+    put :update, id: blog, blog: { body: blog.body, title: blog.title }
+    assert_redirected_to root_path || request.refferer
   end
 
   def test_destroy_of_blog_post_allowed_for_admin
@@ -108,13 +132,18 @@ class BlogsControllerTest < ActionController::TestCase
   end
 
   def test_destroy_of_blog_post_not_allowed_for_registered_user
+    blog_count = Blog.all.count
     sign_in users(:shane)
-    assert_raises(Pundit::NotAuthorizedError) { delete :destroy, id: blog }
+    delete :destroy, id: blog
+    assert_redirected_to root_path || request.refferer
+    assert_equal blog_count, Blog.all.count
   end
 
   def test_destroy_of_blog_post_not_allowed_for_site_visitors
-    sign_in users(:shane)
-    assert_raises(Pundit::NotAuthorizedError) { delete :destroy, id: blog }
+    blog_count = Blog.all.count
+    delete :destroy, id: blog
+    assert_redirected_to root_path || request.refferer
+    assert_equal blog_count, Blog.all.count
   end
 
 end
