@@ -48,7 +48,6 @@ class BlogsControllerTest < ActionController::TestCase
     assert_difference("Blog.count") do
       post :create, blog: { body: blog.body, title: blog.title }
     end
-
     assert_redirected_to blog_path(assigns(:blog))
   end
 
