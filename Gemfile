@@ -12,6 +12,8 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'foundation-rails', '~> 5.5', '>= 5.5.3.2'
 gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'devise', '~> 3.5', '>= 3.5.2'
+gem 'pundit', '~> 1.0', '>= 1.0.1'
 
 group :production do
   gem 'rails_12factor', '0.0.2'
