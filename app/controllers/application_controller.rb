@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   private
     def user_not_authorized
-      flash[:alert] = 'Something Went Wrong.  Contact Admin if you belive this an error'
+      flash[:alert] = 'Something Went Wrong.  Contact Admin if you believe this an error'
       redirect_to(request.referrer || root_path)
     end
 end

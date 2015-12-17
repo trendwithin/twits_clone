@@ -3,10 +3,6 @@ require "test_helper"
 class BlogsControllerTest < ActionController::TestCase
   include Devise::TestHelpers
 
-  def flash
-    pundit_flash = 'Something Went Wrong.  Contact Admin if you belive this an error'
-  end
-
   def blog
     @blog ||= blogs :one
   end
