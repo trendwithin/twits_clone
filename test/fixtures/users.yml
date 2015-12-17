@@ -9,3 +9,8 @@ shane:
   email: shane@theshield.net
   encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
   role: registered
+
+vic:
+  email: vic@theshield.net
+  encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
+  role: admin
