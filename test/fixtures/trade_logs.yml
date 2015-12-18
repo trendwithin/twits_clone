@@ -1,0 +1,34 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: 
+  trade_opened_at: 2015-12-17 15:57:29
+  symbol: MyString
+  position_size: 1
+  entry_price: 1.5
+  stop: 1.5
+  target: 1.5
+  exit_one_on: 2015-12-17 15:57:29
+  exit_one_price: 1.5
+  exit_two_on: 2015-12-17 15:57:29
+  exit_two_price: 1.5
+  exit_three_on: 2015-12-17 15:57:29
+  exit_three_price: 1.5
+  avg_profit: 1.5
+
+two:
+  user: 
+  trade_opened_at: 2015-12-17 15:57:29
+  symbol: MyString
+  position_size: 1
+  entry_price: 1.5
+  stop: 1.5
+  target: 1.5
+  exit_one_on: 2015-12-17 15:57:29
+  exit_one_price: 1.5
+  exit_two_on: 2015-12-17 15:57:29
+  exit_two_price: 1.5
+  exit_three_on: 2015-12-17 15:57:29
+  exit_three_price: 1.5
+  avg_profit: 1.5
