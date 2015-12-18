@@ -7,7 +7,6 @@ class TradeLogsControllerTest < ActionController::TestCase
     @trade_log ||= trade_logs :one
   end
 
-
   def test_index
     sign_in users(:vic)
     get :index
@@ -50,6 +49,7 @@ class TradeLogsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to trade_log_path(assigns(:trade_log))
+    assert_equal trade_log.user_id, users(:vic)
   end
 
   def test_create_is_not_open_to_registered_users

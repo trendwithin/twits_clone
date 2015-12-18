@@ -28,7 +28,7 @@ class TradeLogsController < ApplicationController
   # POST /trade_logs
   # POST /trade_logs.json
   def create
-    @trade_log = TradeLog.new(trade_log_params)
+    @trade_log = current_user.trade_logs.build(trade_log_params)
     authorize @trade_log
     respond_to do |format|
       if @trade_log.save
