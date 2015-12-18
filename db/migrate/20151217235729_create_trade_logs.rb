@@ -14,7 +14,6 @@ class CreateTradeLogs < ActiveRecord::Migration
       t.float :exit_two_price
       t.datetime :exit_three_on
       t.float :exit_three_price
-      t.float :avg_profit
 
       t.timestamps null: false
     end

@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20151217235729) do
     t.float    "exit_two_price"
     t.datetime "exit_three_on"
     t.float    "exit_three_price"
-    t.float    "avg_profit"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
