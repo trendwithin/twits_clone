@@ -74,6 +74,6 @@ class TradeLogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trade_log_params
-      params.require(:trade_log).permit(:user_id, :trade_opened_at, :symbol, :position_size, :entry_price, :stop, :target, :exit_one_on, :exit_one_price, :exit_two_on, :exit_two_price, :exit_three_on, :exit_three_price, :avg_profit)
+      params.require(:trade_log).permit(:user_id, :trade_opened_at, :symbol, :position_size, :entry_price, :stop, :target, :exit_one_on, :exit_one_price, :exit_two_on, :exit_two_price, :exit_three_on, :exit_three_price)
     end
 end
