@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @trade_log.user %>
-</p>
-
-<p>
   <strong>Trade opened at:</strong>
   <%= @trade_log.trade_opened_at %>
 </p>
@@ -67,7 +62,7 @@
 
 <p>
   <strong>Avg profit:</strong>
-  <%= @trade_log.avg_profit %>
+  <!-- Calculate -->
 </p>
 
 <%= link_to 'Edit', edit_trade_log_path(@trade_log) %> |
