@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :blogs
+  has_many :trade_logs
 
   validates :email, presence: true, length: { in: 5..80 }
   validates :name, length: { maximum: 50 }

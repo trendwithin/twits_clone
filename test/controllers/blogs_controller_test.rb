@@ -49,6 +49,7 @@ class BlogsControllerTest < ActionController::TestCase
       post :create, blog: { body: blog.body, title: blog.title }
     end
     assert_redirected_to blog_path(assigns(:blog))
+    assert_equal blog.user_id, users(:vic).id
   end
 
   def test_create_not_allowed_for_registered_users

@@ -1,6 +1,6 @@
 class TradeLogPolicy < ApplicationPolicy
   def index?
-    user.present? && user.admin?
+    user.present?
   end
 
   def create?
@@ -24,6 +24,6 @@ class TradeLogPolicy < ApplicationPolicy
   end
 
   def show?
-    user.present? && user.admin?
+    user.present? && super
   end
 end
