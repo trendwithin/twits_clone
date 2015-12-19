@@ -14,10 +14,10 @@ class TradeLogsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:trade_logs)
   end
 
-  def test_index_in_not_open_to_registered_users
+  def test_index_is_viewable_by_registerd
     sign_in users(:shane)
     get :index
-    assert_response :redirect
+    assert_response :success
   end
 
   def test_index_in_not_open_to_vistors
@@ -49,7 +49,6 @@ class TradeLogsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to trade_log_path(assigns(:trade_log))
-    assert_equal trade_log.user_id, users(:vic)
   end
 
   def test_create_is_not_open_to_registered_users
@@ -73,10 +72,10 @@ class TradeLogsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  def test_show_is_not_available_to_registered_users
+  def test_show_available_to_registered_users
     sign_in users(:shane)
     get :show, id: trade_log
-    assert_redirected_to root_path || request.referrer
+    assert_response :success
   end
 
   def test_show_is_not_available_to_visitors

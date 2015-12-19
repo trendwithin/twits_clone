@@ -65,5 +65,5 @@
   <!-- Calculate -->
 </p>
 
-<%= link_to 'Edit', edit_trade_log_path(@trade_log) %> |
+<%= link_to 'Edit', edit_trade_log_path(@trade_log) if policy(@trade_log).edit? %> |
 <%= link_to 'Back', trade_logs_path %>

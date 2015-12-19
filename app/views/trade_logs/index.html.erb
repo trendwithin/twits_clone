@@ -41,8 +41,10 @@
         <td><%= trade_log.exit_three_price %></td>
         <td><!-- Calculate --></td>
         <td><%= link_to 'Show', trade_log %></td>
-        <td><%= link_to 'Edit', edit_trade_log_path(trade_log) %></td>
-        <td><%= link_to 'Destroy', trade_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edit', edit_trade_log_path(trade_log) if policy(@trade_logs).edit? %></td>
+          <td><%= link_to 'Destroy', trade_log, method: :delete, data: { confirm: 'Are you sure?' } if policy(@trade_logs).destroy? %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
