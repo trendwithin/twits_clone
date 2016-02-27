@@ -10,6 +10,12 @@
     </ul>
 
     <section class="top-bar-section">
+      <!--Left Nav Bar Section -->
+      <ul class="left">
+      <% if user_signed_in? %>
+        <li><%= link_to 'Blog', blogs_path %></li>
+      <% end %>
+      </ul>
       <!-- Right Nav Section -->
       <ul class="right">
         <% if user_signed_in? %>

@@ -42,7 +42,9 @@ body {
     background-color: white;
     margin: 1px 5px 1px 5px;
   }
-
+  .top-bar-section ul.left li a {
+    border-radius: 10px 10px 10px 10px;
+  }
   .top-bar-section ul.right li:first-child > a {
   border-radius: 10px 10px 10px 10px;
   }
