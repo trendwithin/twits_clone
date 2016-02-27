@@ -9,7 +9,7 @@ feature "Admin User Can Update A Blog Post" do
     visit blogs_path
     page.must_have_content 'MyString'
     page.must_have_content 'MyText'
-    within('tr', text: 'MyString') { click_link 'Edit' }
+    click_link 'Edit'
     fill_in 'Title', with: 'One'
     fill_in 'Body', with: 'Modified'
     click_on 'Update Blog'
@@ -24,7 +24,7 @@ feature "Admin User Can Update A Blog Post" do
 
   scenario 'UHP: Blog Updated with Incomplete Fields' do
     visit blogs_path
-    within('tr', text: 'MyString') { click_link 'Edit' }
+    click_link 'Edit'
     fill_in 'Title', with: ''
     fill_in 'Body', with: ''
     click_on 'Update Blog'
@@ -33,7 +33,7 @@ feature "Admin User Can Update A Blog Post" do
 
   scenario 'UHP: Blog Updated with Data Exceeding Valiations' do
     visit blogs_path
-    within('tr', text: 'MyString') { click_link 'Edit' }
+    click_on 'Edit'
     fill_in 'Title', with: 'a' * 51
     fill_in 'Body', with: 'a' * 5001
     click_on 'Update Blog'

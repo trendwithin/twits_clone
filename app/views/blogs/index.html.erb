@@ -1,31 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%= render 'shared/navbar' %>
+<div>
+  <section class="center blue">
+    <h1>Blog Post</h1>
+  </section>
+</div>
 
-<h1>Listing Blogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="row">
+  <div class="small-12 columns medium-12 columns-large-12 columns">
     <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.body %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <% if user_signed_in? %>
-          <td><%= link_to 'Edit', edit_blog_path(blog) if policy(@blogs).edit? %></td>
-          <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } if policy(@blogs).destroy? %></td>
-        <% end %>
-      </tr>
+      <section class='center'>
+        <h2><%= link_to blog.title, blog %></h2>
+      </section>
+      <section class='center'>
+        <strong>Posted on: <%= blog.created_at%></strong>
+      </section>
+      <section class='panel'>
+        <%= truncate(blog.body, length: 500, separator: ' ', :escape => false) %>
+        <br>
+        <div class="text-center">
+          <%= link_to 'Read More', blog, class: 'button button-primary tiny round' %>
+        </div>
+      </section>
+
+      <% if policy(@blogs).edit? || policy(@blogs).destroy? %>
+      <section class="panel center">
+        <%= link_to 'Edit',  edit_blog_path(blog), class: 'button button-primary round small white' %>
+        <%= link_to 'Destroy', blog,  method: :delete, data: { confirm: 'Are you sure?' },  class: 'button button-alert round small white'%>
+      </section>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path %>
+  </div>
+</div>

@@ -7,26 +7,21 @@ feature "Admin User Can Access Blog Index" do
 
   scenario "HP: Index of Blogs Renders" do
     visit blogs_path
-    page.must_have_content 'Show'
-    page.must_have_content 'Edit'
-    page.must_have_content 'Destroy'
-
-    within('tr', text: 'MyString') { click_link 'Show' }
+    page.must_have_content "Read More"
     page.must_have_content 'MyString'
     page.must_have_link 'Edit'
-    page.must_have_link 'Back'
   end
 end
 
-feature 'Registerd User Can Access Blog Index' do
+feature 'Registered User Can Access Blog Index' do
   scenario 'HP: Visit Index and Blogs Render' do
   logged_in_as users(:shane)
   visit blogs_path
   page.wont_have_content 'Edit'
   page.wont_have_content 'Destroy'
-  page.must_have_content 'Show'
+  page.must_have_content 'Read More'
 
-  within('tr', text: 'MyString') { click_link 'Show' }
+  click_link 'Read More'
   page.must_have_content 'MyString'
   page.must_have_content 'Back'
   page.wont_have_content 'Edit'
