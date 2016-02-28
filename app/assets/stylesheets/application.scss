@@ -22,7 +22,7 @@ body {
 }
 
 @media #{$large-up} {
-  .top-bar{
+  .top-bar {
     background-color: #FFFFFF;
     color: #393939;
   }
@@ -42,7 +42,9 @@ body {
     background-color: white;
     margin: 1px 5px 1px 5px;
   }
-
+  .top-bar-section ul.left li a {
+    border-radius: 10px 10px 10px 10px;
+  }
   .top-bar-section ul.right li:first-child > a {
   border-radius: 10px 10px 10px 10px;
   }
@@ -88,4 +90,23 @@ body {
 // Images
 img {
   width: 100%;
+}
+
+// Buttons
+a.button.button-primary.round.small.white {
+  font-size: 1em;
+  color: white;
+}
+
+// Table
+table, td {
+  border: 1px solid black;
+}
+
+td.red {
+  color: red;
+}
+
+td.green {
+  color: green;
 }

@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
+<%= render 'shared/navbar' %>
+<div class="row">
+  <div class="small-12 columns medium-12 columns-large-12 columns">
+    <section class='center'>
+      <h2><%= @blog.title %></h2>
+    </section>
+    <section class='panel'>
+      <%= @blog.body %>
+    </section>
+  </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @blog.body %>
-</p>
-
-<%= link_to 'Edit', edit_blog_path(@blog) if policy(@blog).edit? %> |
-<%= link_to 'Back', blogs_path %>
+<div class="small-12 columns medium-12 columns-large-12 columns center white">
+  <%= link_to 'Edit | ', edit_blog_path(@blog) if policy(@blog).edit? %>
+  <%= link_to 'Back', blogs_path, class: 'button button-primary round small white' %>
+</div>

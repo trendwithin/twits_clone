@@ -6,6 +6,16 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  protected
+
+  def after_sign_in_path_for(resource)
+    if current_user.role == 'admin' || current_user.role == 'registered'
+      blogs_path
+    else
+      root_path
+    end
+  end
+
   private
     def user_not_authorized
       flash[:alert] = 'Something Went Wrong.  Contact Admin if you believe this an error'

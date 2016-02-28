@@ -5,28 +5,106 @@ one:
   user:
   trade_opened_at: 2015-12-17 15:57:29
   symbol: GOOG
-  position_size: 1
-  entry_price: 1.5
+  position_size: 100
+  entry_price: 705.07
   stop: 1.5
-  target: 1.5
+  target: 725.07
   exit_one_on: 2015-12-17 15:57:29
-  exit_one_price: 1.5
+  exit_one_shares: 100
+  exit_one_price: 715.08
   exit_two_on: 2015-12-17 15:57:29
-  exit_two_price: 1.5
+  exit_two_shares:
+  exit_two_price: 720.10
   exit_three_on: 2015-12-17 15:57:29
-  exit_three_price: 1.5
+  exit_three_shares:
+  exit_three_price: 730.23
 
 two:
   user:
   trade_opened_at: 2015-12-17 15:57:29
   symbol: AAPL
-  position_size: 1
-  entry_price: 1.5
+  position_size: 100
+  entry_price: 705.07
   stop: 1.5
-  target: 1.5
+  target: 725.07
   exit_one_on: 2015-12-17 15:57:29
-  exit_one_price: 1.5
+  exit_one_shares: 100
+  exit_one_price: 715.08
   exit_two_on: 2015-12-17 15:57:29
-  exit_two_price: 1.5
+  exit_two_shares:
+  exit_two_price: 720.10
   exit_three_on: 2015-12-17 15:57:29
-  exit_three_price: 1.5
+  exit_three_shares:
+  exit_three_price: 730.23
+
+three:
+  user:
+  trade_opened_at: 2015-12-17 15:57:29
+  symbol: FAKE
+  position_size: 100
+  entry_price: 10
+  stop: 9
+  target: 15
+  exit_one_on: 2015-12-17 15:57:29
+  exit_one_shares: 100
+  exit_one_price: 11
+  exit_two_on: 2015-12-17 15:57:29
+  exit_two_shares:
+  exit_two_price:
+  exit_three_on: 2015-12-17 15:57:29
+  exit_three_shares:
+  exit_three_price:
+
+four:
+  user:
+  trade_opened_at: 2015-12-17 15:57:29
+  symbol: JUNK
+  position_size: 100
+  entry_price: 10
+  stop: 9
+  target: 15
+  exit_one_on: 2015-12-17 15:57:29
+  exit_one_shares: 50
+  exit_one_price: 11
+  exit_two_on: 2015-12-17 15:57:29
+  exit_two_shares: 25
+  exit_two_price: 12
+  exit_three_on: 2015-12-17 15:57:29
+  exit_three_shares: 25
+  exit_three_price: 15
+
+five:
+  user:
+  trade_opened_at: 2015-12-17 15:57:29
+  symbol: LOSS
+  position_size: 100
+  entry_price: 10
+  stop: 9
+  target: 15
+  exit_one_on: 2015-12-17 15:57:29
+  exit_one_shares: 100
+  exit_one_price: 9
+  exit_two_on: 2015-12-17 15:57:29
+  exit_two_shares:
+  exit_two_price:
+  exit_three_on: 2015-12-17 15:57:29
+  exit_three_shares:
+  exit_three_price:
+
+six:
+  user:
+  trade_opened_at: 2015-12-17 15:57:29
+  symbol: MIX
+  position_size: 100
+  entry_price: 10
+  stop: 9
+  target: 15
+  exit_one_on: 2015-12-17 15:57:29
+  exit_one_shares: 50
+  exit_one_price: 11
+  exit_two_on: 2015-12-17 15:57:29
+  exit_two_shares: 50
+  exit_two_price: 9
+  exit_three_on: 2015-12-17 15:57:29
+  exit_three_shares:
+  exit_three_price:

@@ -35,13 +35,16 @@ ActiveRecord::Schema.define(version: 20151217235729) do
     t.float    "stop"
     t.float    "target"
     t.datetime "exit_one_on"
+    t.integer  "exit_one_shares"
     t.float    "exit_one_price"
     t.datetime "exit_two_on"
+    t.integer  "exit_two_shares"
     t.float    "exit_two_price"
     t.datetime "exit_three_on"
+    t.integer  "exit_three_shares"
     t.float    "exit_three_price"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   add_index "trade_logs", ["user_id"], name: "index_trade_logs_on_user_id", using: :btree

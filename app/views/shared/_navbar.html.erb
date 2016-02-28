@@ -10,13 +10,20 @@
     </ul>
 
     <section class="top-bar-section">
+      <!--Left Nav Bar Section -->
+      <ul class="left">
+      <% if user_signed_in? %>
+        <li><%= link_to 'Blog', blogs_path %></li>
+        <li><%= link_to 'Trades', trade_logs_path %></li>
+      <% end %>
+      </ul>
       <!-- Right Nav Section -->
       <ul class="right">
         <% if user_signed_in? %>
           <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
         <% else %>
           <li><%= (link_to 'Join', new_user_registration_path) %></li>
-          <li><a href="#">Sign in</a></li>
+          <li><%= link_to 'Sign in', new_user_session_path %></a></li>
         <% end %>
       </ul>
     </section>
