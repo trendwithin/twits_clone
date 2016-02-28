@@ -9,10 +9,13 @@ class CreateTradeLogs < ActiveRecord::Migration
       t.float :stop
       t.float :target
       t.datetime :exit_one_on
+      t.integer :exit_one_shares
       t.float :exit_one_price
       t.datetime :exit_two_on
+      t.integer :exit_two_shares
       t.float :exit_two_price
       t.datetime :exit_three_on
+      t.integer :exit_three_shares
       t.float :exit_three_price
 
       t.timestamps null: false

@@ -97,3 +97,16 @@ a.button.button-primary.round.small.white {
   font-size: 1em;
   color: white;
 }
+
+// Table
+table, td {
+  border: 1px solid black;
+}
+
+td.red {
+  color: red;
+}
+
+td.green {
+  color: green;
+}

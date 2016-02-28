@@ -43,3 +43,13 @@ feature 'Guest Visitors Can Not Access Log Index' do
     page.must_have_content 'You need to sign in or sign up before continuing.'
   end
 end
+
+feature 'Calculate Average Gain/Loss' do
+  scenario 'Calulate the Average Positive Return Exits Shows in View' do
+    logged_in_as users(:shane)
+    visit trade_logs_path
+    page.must_have_content '10%'
+    page.must_have_content '22%'
+    page.must_have_content '0%'
+  end
+end

@@ -1,69 +1,65 @@
-<p id="notice"><%= notice %></p>
+<%= render 'shared/navbar' %>
+<div class="row">
+  <div class="small-12 columns medium-12 columns large-12 columns">
+    <div class="panel">
+      <table>
+        <thead><h3>Trade Opened At: <%= @trade_log.trade_opened_at %></h3></thead>
+        <tbody>
+          <tr>
+            <td>
+              Symbol:
+            </td>
+            <td>
+              <%= @trade_log.symbol %>
+            </td>
+            <td>
+              Position Size:
+            </td>
+            <td>
+              <%= @trade_log.position_size %>
+            </td>
+            <td>Entry Price:</td>
+            <td><%= @trade_log.entry_price %></td>
+            <td>Stop:</td>
+            <td><%= @trade_log.stop %></td>
+            <td>Target:</td>
+            <td><%=  @trade_log.target%></td>
+          </tr>
+          <tr>
+            <td>Exit One Date:</td>
+            <td><%= @trade_log.exit_one_on %></td>
+            <td>Shares</td>
+            <td><%= @trade_log.exit_one_shares %></td>
+            <td>Price:</td>
+            <td><%= @trade_log.exit_one_price %></td>
+          </tr>
+          <tr>
+            <td>Exit Two Date:</td>
+            <td><%= @trade_log.exit_two_on %></td>
+            <td>Shares</td>
+            <td><%= @trade_log.exit_two_shares %></td>
+            <td>Price:</td>
+            <td><%= @trade_log.exit_two_price %></td>
+          </tr>
+           <tr>
+            <td>Exit Three Date:</td>
+            <td><%= @trade_log.exit_three_on %></td>
+            <td>Shares</td>
+            <td><%= @trade_log.exit_three_shares %></td>
+            <td>Price:</td>
+            <td><%= @trade_log.exit_three_price %></td>
+          </tr>
+          <tr>
+            <td>Average Gain/Loss</td>
+            <td><%= weighted_avg(@trade_log) %></td>
+          </tr>
+        </tbody>
+      </table>
+      <% if policy(@trade_log).edit? %>
+        <%= link_to 'Edit', edit_trade_log_path(@trade_log), class: 'button button-info tiny round' %>
+      <% end %> |
+      <%= link_to 'Back', trade_logs_path, class: 'button button-primary tiny round'  %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Trade opened at:</strong>
-  <%= @trade_log.trade_opened_at %>
-</p>
-
-<p>
-  <strong>Symbol:</strong>
-  <%= @trade_log.symbol %>
-</p>
-
-<p>
-  <strong>Position size:</strong>
-  <%= @trade_log.position_size %>
-</p>
-
-<p>
-  <strong>Entry price:</strong>
-  <%= @trade_log.entry_price %>
-</p>
-
-<p>
-  <strong>Stop:</strong>
-  <%= @trade_log.stop %>
-</p>
-
-<p>
-  <strong>Target:</strong>
-  <%= @trade_log.target %>
-</p>
-
-<p>
-  <strong>Exit one on:</strong>
-  <%= @trade_log.exit_one_on %>
-</p>
-
-<p>
-  <strong>Exit one price:</strong>
-  <%= @trade_log.exit_one_price %>
-</p>
-
-<p>
-  <strong>Exit two on:</strong>
-  <%= @trade_log.exit_two_on %>
-</p>
-
-<p>
-  <strong>Exit two price:</strong>
-  <%= @trade_log.exit_two_price %>
-</p>
-
-<p>
-  <strong>Exit three on:</strong>
-  <%= @trade_log.exit_three_on %>
-</p>
-
-<p>
-  <strong>Exit three price:</strong>
-  <%= @trade_log.exit_three_price %>
-</p>
-
-<p>
-  <strong>Avg profit:</strong>
-  <!-- Calculate -->
-</p>
-
-<%= link_to 'Edit', edit_trade_log_path(@trade_log) if policy(@trade_log).edit? %> |
-<%= link_to 'Back', trade_logs_path %>

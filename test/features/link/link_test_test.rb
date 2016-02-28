@@ -6,5 +6,7 @@ feature "Link Test" do
     visit root_path
     click_on 'Blog'
     assert current_path == blogs_path
+    click_on 'Trades'
+    assert current_path == trade_logs_path
   end
 end
