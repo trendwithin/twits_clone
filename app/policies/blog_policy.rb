@@ -1,7 +1,7 @@
 class BlogPolicy < ApplicationPolicy
 
   def index?
-    user.present?
+    user.present? && (user.registered? || user.admin?)
   end
 
   def create?
@@ -25,6 +25,6 @@ class BlogPolicy < ApplicationPolicy
   end
 
   def show?
-    super && user.present?
+    super && user.present? && (user.registered? || user.admin?)
   end
 end

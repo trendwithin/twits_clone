@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   def admin?
     role == 'admin'
   end
+
+  def registered?
+    role == 'registered'
+  end
 end
