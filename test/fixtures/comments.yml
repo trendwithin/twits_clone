@@ -1,0 +1,12 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  body: Commenting to the first blog
+  user: users(:shane)
+  blog: blogs(:one)
+
+two:
+  body: Commenting to the second blog
+  user: users(:shane)
+  blog: blogs(:two)

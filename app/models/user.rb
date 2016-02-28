@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :blogs
   has_many :trade_logs
+  has_many :comments
 
   validates :email, presence: true, length: { in: 5..80 }
   validates :name, length: { maximum: 50 }
