@@ -2,7 +2,7 @@
   <% if @blog.comments.count > 0 %>
     <div class="small-10 columns medium-10 columns large-10 columns">
       <header><h5>Comments</h5></header>
-      <% @blog.comments.each do |comment| %>
+      <% @blog.comments.desc.each do |comment| %>
         <% unless comment.body.empty? %>
           <div class="panel" id="<%= dom_id(comment) %>">
               <%= comment.body %> <br>

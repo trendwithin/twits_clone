@@ -5,4 +5,5 @@ class Blog < ActiveRecord::Base
   validates :body, presence: true, length: { maximum: 5000 }
 
   enum status: { pay_wall_blog: 0, public_blog: 1 }
+
 end
