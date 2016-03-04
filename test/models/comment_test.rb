@@ -2,7 +2,7 @@ require "test_helper"
 
 class CommentTest < ActiveSupport::TestCase
   def comment
-    @comment ||= comments(:one)
+    @comment ||= comments(:first_comment)
   end
 
   def test_valid
