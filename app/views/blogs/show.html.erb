@@ -1,16 +1,18 @@
 <%= render 'shared/navbar' %>
 <div class="row">
-  <div class="small-12 columns medium-12 columns-large-12 columns">
+  <div class="small-12 columns medium-12 columns large-12 columns">
     <section class='center'>
       <h2><%= @blog.title %></h2>
+      <%= link_to 'Edit | ', edit_blog_path(@blog) if policy(@blog).edit? %>
+      <%= link_to 'Back', blogs_path %>
     </section>
     <section class='panel'>
       <%= @blog.body %>
     </section>
   </div>
 </div>
-
-<div class="small-12 columns medium-12 columns-large-12 columns center white">
-  <%= link_to 'Edit | ', edit_blog_path(@blog) if policy(@blog).edit? %>
-  <%= link_to 'Back', blogs_path, class: 'button button-primary round small white' %>
+<div class="row">
+  <%= render 'comments/form' %>
 </div>
+<%= render @comment %>
+

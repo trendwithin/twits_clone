@@ -1,0 +1,32 @@
+<span class="clearfix"></span>
+<div class="row">
+    <header><h5>Comments</h5></header>
+    <% if @blog.comments.count == 0 %>
+      <section class="commentbox">
+        <h6>Be The First To Comment</h6>
+      </section>
+    <% end %>
+
+    <% @blog.comments.desc.each do |comment| %>
+      <div class="small-12 columns medium-7 columns large-7 columns">
+        <div class="commentbox">
+          <span class="tip tip-down show-for-small-only"></span>
+          <span class="tip tip-right hide-for-small-only"></span>
+          <div class="comment" id="<%= dom_id(comment) %>">
+            <%= comment.body %>
+            <% if current_user.admin? %>
+              <br>
+              <%= link_to 'Edit', edit_blog_comment_path(@blog, comment) %>
+              <%= link_to 'Destroy', ([@blog, comment]), method: :delete, data: { confirm: 'Are you sure?'} %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="small-12 columns medium-5 columns large-5 columns">
+        <div class="bubble clearfix">
+        <img src="#" alt="Gravatar" class="hide-for-small-only">
+         <span class="bubble-content">by: <%= comment.user.email %></span>
+       </div>
+      </div>
+    <% end %>
+</div>

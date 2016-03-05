@@ -13,6 +13,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @comment = Comment.new
   end
 
   # GET /blogs/new
@@ -69,7 +70,7 @@ class BlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-      @blog = Blog.find(params[:id])
+      @blog = Blog.where(id: params[:id]).includes(:comments => :user).first
       authorize @blog
     end
 
