@@ -8,9 +8,7 @@ feature "Comments::Ordering" do
     click_button 'Add Comment'
     fill_in 'comment[body]', with: 'This should be the first comment returned'
     click_button 'Add Comment'
-
     comments = blogs(:one).comments
-    byebug
     assert_equal 'This should be the first comment returned', Blog.first.comments.desc.first.body
   end
 end
