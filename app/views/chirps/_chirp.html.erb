@@ -4,4 +4,7 @@
   <span class="timestamp">
     Posted <%= time_ago_in_words(chirp.created_at) %> ago
   </span>
+  <% if current_user.admin? %>
+    <%= link_to 'Delete', chirp, method: :delete, data: { confirm: 'Are you sure?'} %>
+  <% end %>
 </li>

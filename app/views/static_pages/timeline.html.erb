@@ -15,7 +15,7 @@
     <section class="chirp_list">
       <h2>Timeline</h2>
       <% if @chirps.any? %>
-        <ol class="chirps">
+        <ol id="chirps">
           <%= render @chirps %>
         </ol>
         <%= will_paginate @chirps %>
