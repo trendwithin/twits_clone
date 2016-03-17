@@ -24,7 +24,7 @@ feature "Admin User Can Create Trade Log" do
     fill_in 'Position size', with: 100
     fill_in 'Entry price', with: 759.87
     click_button 'Create Trade log'
-    page.must_have_content '1 error prohibited'
+    page.must_have_content 'The form contains 1 error.'
   end
 
   scenario 'UHP: Trade Log Entry Symbol Empty' do
@@ -33,7 +33,7 @@ feature "Admin User Can Create Trade Log" do
     fill_in 'Position size', with: 100
     fill_in 'Entry price', with: 759.87
     click_button 'Create Trade log'
-    page.must_have_content '1 error prohibited'
+    page.must_have_content 'The form contains 1 error.'
   end
 
   scenario 'UHP: Trade Log Entry Position Size Empty' do
@@ -42,7 +42,7 @@ feature "Admin User Can Create Trade Log" do
     fill_in 'Symbol', with: 'GOOG'
     fill_in 'Entry price', with: 759.87
     click_button 'Create Trade log'
-    page.must_have_content '2 errors prohibited'
+    page.must_have_content 'The form contains 2 errors.'
   end
 
   scenario 'UHP: Trade Log Entry Poisition Size 0' do
@@ -52,7 +52,7 @@ feature "Admin User Can Create Trade Log" do
     fill_in 'Symbol', with: 'GOOG'
     fill_in 'Entry price', with: 759.87
     click_button 'Create Trade log'
-    page.must_have_content '1 error prohibited'
+    page.must_have_content 'The form contains 1 error.'
   end
 
   scenario 'UHP: Trade Log Entry Price Empty' do
@@ -61,7 +61,7 @@ feature "Admin User Can Create Trade Log" do
     fill_in 'Symbol', with: 'GOOG'
     fill_in 'Position size', with: 100
     click_button 'Create Trade log'
-    page.must_have_content '1 error prohibited'
+    page.must_have_content 'The form contains 1 error.'
   end
 end
 

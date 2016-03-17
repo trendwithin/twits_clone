@@ -38,4 +38,12 @@ class UserTest < ActiveSupport::TestCase
     user.name = 'a' * 51
     refute user.valid?
   end
+
+  test 'associated chirps are destroyed with user deletion' do
+    u = User.create!(email: 'me@us.com', password: 'password', password_confirmation: 'password')
+    u.chirps.create!(content: 'Lorem')
+    assert_difference 'Chirp.count', -1 do
+      u.destroy
+    end
+  end
 end

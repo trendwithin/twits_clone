@@ -33,7 +33,7 @@ feature "Admin Can Create Blog Post" do
     fill_in 'Body', with: body_5000
     click_button 'Create Blog'
     page.must_have_content 'Title is too long'
-    page.must_have_content '1 error prohibited this blog from being saved:'
+    page.must_have_content 'The form contains 1 error.'
   end
 
   scenario 'UHP Body > 5000 Characters Not Allowed' do
@@ -44,13 +44,13 @@ feature "Admin Can Create Blog Post" do
     fill_in 'Body', with: body_5001
     click_button 'Create Blog'
     page.must_have_content 'Body is too long'
-    page.must_have_content '1 error prohibited this blog from being saved:'
+    page.must_have_content 'The form contains 1 error.'
   end
 
   scenario 'UHP: Title and Body Empty' do
     visit new_blog_path
     click_button 'Create Blog'
-    page.must_have_content '2 errors prohibited this blog from being saved'
+    page.must_have_content 'The form contains 2 errors.'
   end
 end
 

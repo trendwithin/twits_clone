@@ -78,6 +78,8 @@ body {
   background-color: #EFEFEF;
 }
 
+$gray-light: #777;
+
 // Text
 .center {
   text-align: center;
@@ -192,3 +194,62 @@ td.green {
    background-color:#FFFFFF;
    box-shadow:1px 1px 5px rgba(0,0,0,.2);
    }
+
+#chirps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    border-top: 1px solid #e8e8e8;
+    margin-bottom: 5px;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    background-color: #DADADA;
+    border-radius: 1px;
+    border: 5px solid #ccc;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+.new_chirp {
+  clear: both;
+  padding-top:  1rem;
+  margin-top: 1rem;
+  padding-right: 1rem;
+}

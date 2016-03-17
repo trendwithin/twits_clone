@@ -22,7 +22,7 @@ feature "Admin User Can Update A Trade Alert" do
     fill_in 'Position size', with: ''
     fill_in 'Entry price', with: ''
     click_button 'Update Trade log'
-    page.must_have_content '4 errors prohibited'
+    page.must_have_content 'The form contains 4 errors.'
   end
 end
 

@@ -10,6 +10,12 @@
 User.create(email: 'test_admin@example.com', password: 'password', password_confirmation: 'password', role: 'admin')
 User.create(email: 'me@you.com', password: 'password', password_confirmation: 'password')
 
+99.times do |n|
+  name = Faker::Name.name
+  email = "example-#{n+1}@twits.org"
+  password = 'password'
+  User.create!(email: email, password: password, password_confirmation: password)
+end
 
 # Blogs
 
@@ -20,4 +26,9 @@ Blog.create(title: 'Fourth Blog', body: 'Lorem ipsum dolor sit amet, consectetur
 Blog.create(title: 'Fifth Blog' , body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores veniam, iste eligendi nam ab, ipsum in et illum assumenda praesentium, optio placeat! Nobis repellendus quibusdam modi, quo iure perspiciatis suscipit!', user_id: User.first.id)
 Blog.create(title: 'Sixth Blog', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, ipsum saepe labore, ipsa harum cum minima modi magnam repudiandae sit neque unde itaque mollitia quia enim. Aliquid omnis repellendus, aspernatur?', user_id: User.first.id)
 
-
+# Chrips
+users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.sentence(5)
+  users.each { |user| user.chirps.create!(content: content) }
+end

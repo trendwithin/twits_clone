@@ -1,0 +1,12 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+prior:
+  content: 'Sold my position in ABC.  Market suspect here.'
+  user: shane
+  created_at: <%= 1.day.ago %>
+
+latest:
+  content: 'Opening a position in XYZ @ 54.45'
+  user: shane
+  created_at: <%= Time.zone.now %>
