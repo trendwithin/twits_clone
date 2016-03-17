@@ -9,3 +9,11 @@ feature "User Visits Timeline Chirps" do
     page.find('li:first-child', text: chirps(:latest).content)
   end
 end
+
+feature 'Guest Attempts to Visit Chirps on Timeline' do
+  scenario 'Chirps Will Not Render without Logging In' do
+    visit timeline_path
+    page.wont_have_content 'Timeline'
+    page.must_have_content 'You need to sign in or sign up before continuing.'
+  end
+ end

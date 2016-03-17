@@ -10,5 +10,7 @@ feature "Link Test" do
     assert current_path == trade_logs_path
     click_on 'Timeline'
     assert current_path == timeline_path
+    click_on 'Blog'
+    assert current_path == blogs_path
   end
 end
