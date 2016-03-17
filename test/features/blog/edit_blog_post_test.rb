@@ -28,7 +28,7 @@ feature "Admin User Can Update A Blog Post" do
     fill_in 'Title', with: ''
     fill_in 'Body', with: ''
     click_on 'Update Blog'
-    page.must_have_content '2 errors prohibited this blog from being saved:'
+    page.must_have_content 'The form contains 2 errors.'
   end
 
   scenario 'UHP: Blog Updated with Data Exceeding Valiations' do
@@ -37,7 +37,7 @@ feature "Admin User Can Update A Blog Post" do
     fill_in 'Title', with: 'a' * 51
     fill_in 'Body', with: 'a' * 5001
     click_on 'Update Blog'
-    page.must_have_content '2 errors prohibited this blog from being saved:'
+    page.must_have_content 'The form contains 2 errors.'
   end
 end
 
