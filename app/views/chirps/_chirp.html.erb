@@ -1,0 +1,7 @@
+<li id="<%= dom_id(chirp) %>">
+  <span class="user"><%#= link_to chirp.user.email, chirp.user %> <%= chirp.user.email %></span>
+  <span class="content"><%= chirp.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(chirp.created_at) %> ago
+  </span>
+</li>

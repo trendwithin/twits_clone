@@ -14,6 +14,8 @@ gem 'foundation-rails', '~> 5.5', '>= 5.5.3.2'
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'pundit', '~> 1.0', '>= 1.0.1'
+gem 'will_paginate',           '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 
 group :production do
   gem 'rails_12factor', '0.0.2'
@@ -21,6 +23,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'faker', '~> 1.6', '>= 1.6.3'
   gem 'byebug'
   gem 'spring'
   gem 'web-console', '~> 2.0'

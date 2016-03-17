@@ -1,2 +1,17 @@
-<h1>StaticPages#timeline</h1>
-<p>Find me in app/views/static_pages/timeline.html.erb</p>
+<div class="row">
+  <aside class="large-8 columns">
+    <section class="chirp_list">
+      <h2>Timeline</h2>
+      <% if @chirps.any? %>
+        <h3>Recent Tweets:</h3>
+        <ol class="chirps">
+          <%= render @chirps %>
+        </ol>
+        <%= will_paginate @chirps %>
+      <% end %>
+    </section>
+  </aside>
+  <div class="large-4 columns">
+    Trade Alert!
+  </div>
+</div>
