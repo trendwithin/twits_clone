@@ -198,9 +198,16 @@ td.green {
 #chirps {
   list-style: none;
   padding: 0;
+  margin: 0;
   li {
-    padding: 10px 0;
     border-top: 1px solid #e8e8e8;
+    margin-bottom: 5px;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    background-color: #DADADA;
+    border-radius: 1px;
+    border: 5px solid #ccc;
   }
   .user {
     margin-top: 5em;
