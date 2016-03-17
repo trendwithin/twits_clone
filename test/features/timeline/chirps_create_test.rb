@@ -10,4 +10,11 @@ feature "Verified and Signed in Users Creating Chirps" do
     page.must_have_content 'Message created!'
     page.find('li:first-child', text: 'Peep Peep Peep!')
   end
+
+  scenario 'User Submits Chirp with Invalid or Empty Data' do
+    logged_in_as users(:shane)
+    visit timeline_path
+    click_button 'Post'
+    page.must_have_content "Content can't be blank"
+  end
 end

@@ -9,6 +9,7 @@ class ChirpsController < ApplicationController
       flash[:success] = 'Message created!'
       redirect_to timeline_url
     else
+      @chirps = []
       render 'static_pages/timeline'
     end
   end
