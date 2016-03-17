@@ -3,7 +3,7 @@ require "test_helper"
 class ChirpTest < ActiveSupport::TestCase
   def setup
     @user = users(:vic)
-    @chirp = Chirp.new(content: 'Lorem', user_id: @user.id)
+    @chirp = @user.chirps.build(content: 'Lorem')
   end
 
   def test_valid
@@ -28,5 +28,9 @@ class ChirpTest < ActiveSupport::TestCase
   test 'chirp length edge case 1000' do
     @chirp.content = 'a' * 1000
     assert @chirp.valid?
+  end
+
+  test 'chrips ordered by most recent first' do
+    assert_equal chirps(:latest), Chirp.first
   end
 end
