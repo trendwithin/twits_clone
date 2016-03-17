@@ -1,0 +1,7 @@
+<%= form_for(@chirp) do |f| %>
+  <div class="field">
+    <%= f.text_area :content, rows: '10', placeholder: 'Compose new message...' %>
+
+  <%= f.submit 'Post', class: 'button button-primary tiny radius' %>
+  </div>
+<% end %>

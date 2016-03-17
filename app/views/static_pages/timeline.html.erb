@@ -1,10 +1,20 @@
 <%= render 'shared/navbar' %>
+<br>
+<div class="row">
+  <section class="large-8 columns">
+    <%= render 'shared/chirp_form' %>
+  </section>
+  <div class="large-4 columns">
+    text
+  </div>
+</div>
+
+
 <div class="row">
   <aside class="large-8 columns">
     <section class="chirp_list">
       <h2>Timeline</h2>
       <% if @chirps.any? %>
-        <h3>Recent Tweets:</h3>
         <ol class="chirps">
           <%= render @chirps %>
         </ol>
